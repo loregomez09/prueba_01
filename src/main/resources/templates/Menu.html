@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Menú</title>
+  <style>
+    body {
+      background-image: url("https://cdn.pixabay.com/photo/2021/05/30/21/48/background-6297148_1280.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .menu-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .menu {
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+    }
+
+    .menu-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .menu-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .menu-logo img {
+      max-width: 100px;
+      margin-right: 10px;
+    }
+
+    .menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: center;
+    }
+
+    .menu-item {
+      margin-bottom: 10px;
+    }
+
+    .menu-link {
+      display: block;
+      padding: 14px 28px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .menu-link:hover {
+      background-color: #0056b3;
+    }
+
+    .menu-link.active {
+      background-color: #0056b3;
+      font-weight: bold;
+    }
+
+    .menu-footer {
+      margin-top: 40px;
+      text-align: center;
+      color: #999;
+      font-size: 12px;
+    }
+
+    .menu-footer span {
+      color: #777;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div class="menu-container">
+  <div class="menu">
+    <div class="menu-logo">
+
+      <h1 class="menu-title">Menú</h1>
+    </div>
+    <ul class="menu-list">
+      <li class="menu-item"><a href="/laptop" class="menu-link">Laptop</a></li>
+      <li class="menu-item"><a href="/desktop" class="menu-link">Desktop</a></li>
+      <li class="menu-item"><a href="/pantalla" class="menu-link">Pantalla</a></li>
+      <li class="menu-item"><a href="/persona" class="menu-link">Persona</a></li>
+      <li class="menu-item"><a href="/" class="menu-link">Salir</a></li>
+    </ul>
+    <div class="menu-footer">
+      <span>Proyecto Final Arquitectura  Lady - Juan - 2023-01</span>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Asignación de elementos</title>
+  <style>
+    /* Estilos CSS */
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url('https://img.freepik.com/vector-gratis/fondo-tecnologia-digital-alambre-malla-red_1017-27428.jpg');
+      background-size: cover;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: none;
+      background-color: #007bff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .menu {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .menu button {
+      margin-right: 10px;
+    }
+
+    .assigned-items {
+      margin-top: 50px;
+    }
+
+    .assigned-items h2 {
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+<body>
+<h1>Asignación de elementos</h1>
+
+<form method="post" action="/asignacion">
+  <label for="id_persona">Selecciona una persona:</label>
+  <select id="id_persona" name="id_persona">
+    <option value="">-- Selecciona una persona --</option>
+    <!-- Itera sobre la lista de personas y muestra sus nombres y IDs -->
+    <option th:each="persona : ${personas}" th:value="${persona.id_persona}" th:text="${persona.nombre}"></option>
+  </select>
+
+  <label for="id_laptop">Selecciona un laptop:</label>
+  <select id="id_laptop" name="id_laptop">
+    <option value="">-- Selecciona un laptop --</option>
+    <!-- Itera sobre la lista de laptops y muestra sus nombres y IDs -->
+    <option th:each="laptop : ${laptops}" th:value="${laptop.id_laptop}" th:text="${laptop.nombre}"></option>
+  </select>
+
+  <label for="id_pantalla">Selecciona una pantalla:</label>
+  <select id="id_pantalla" name="id_pantalla">
+    <option value="">-- Selecciona una pantalla --</option>
+    <!-- Itera sobre la lista de pantallas y muestra sus nombres y IDs -->
+    <option th:each="pantalla : ${pantallas}" th:value="${pantalla.id_pantalla}" th:text="${pantalla.nombre}"></option>
+  </select>
+
+  <label for="id_desktop">Selecciona un desktop:</label>
+  <select id="id_desktop" name="id_desktop">
+    <option value="">-- Selecciona un desktop --</option>
+    <!-- Itera sobre la lista de desktops y muestra sus nombres y IDs -->
+    <option th:each="desktop : ${desktops}" th:value="${desktop.id_desktop}" th:text="${desktop.nombre}"></option>
+  </select>
+
+  <button type="submit">Asignar</button>
+
+</form>
+
+<div class="assigned-items">
+  <h2>Elementos asignados:</h2>
+  <table>
+    <tr>
+      <th>Laptop</th>
+      <th>Pantalla</th>
+      <th>Desktop</th>
+    </tr>
+    <!-- Itera sobre los elementos asignados -->
+    <tr th:each="asignacion : ${asignaciones}">
+      <td th:text="${asignacion.laptop.nombre}"></td>
+      <td th:text="${asignacion.pantalla.nombre}"></td>
+      <td th:text="${asignacion.desktop.nombre}"></td>
+    </tr>
+  </table>
+</div>
+</body>
+</html>
